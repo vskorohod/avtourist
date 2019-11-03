@@ -1,0 +1,263 @@
+.page-header
+  display: flex
+  flex-direction: column
+
+.main-info
+  display: flex
+  flex-direction: column
+  padding: 15px
+  padding-top: 0
+  &__logo-block
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 15px
+  &__logo-link
+    display: inline-block
+    padding-top: 15px
+    font-size: 28px
+    font-weight: bold
+    color: $grafit
+    text-decoration: none
+    text-transform: uppercase
+    border-top: 4px solid $brown
+  &__logo-description
+    font-size: 14px
+    line-height: 14px
+  &__address-block
+    display: flex
+    flex-direction: column
+    margin-bottom: 15px
+    text-align: center
+  &__address
+    font-size: 20px
+    font-weight: bold
+    text-transform: uppercase
+  &__working-hours
+    font-size: 16px
+    text-transform: uppercase
+  &__telephone-block
+    display: flex
+    flex-direction: column
+    text-align: center
+  &__deskphone
+    font-size: 25px
+    font-weight: bold
+    color: $grafit
+    text-decoration: none
+  &__citycode
+    padding-right: 5px
+    font-size: 18px
+    font-weight: normal
+  &__mobilphone
+    font-size: 20px
+    color: $grafit
+    text-decoration: none
+
+.main-nav
+  position: relative
+  width: auto
+  min-height: 51px
+  background-color: $light-brown
+  &__list
+    margin: 0
+    padding: 0
+    font-weight: bold
+    list-style: none
+  &__toggle
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    width: 70px
+    height: 50px
+    background-color: $light-brown
+    cursor: pointer
+    border: none
+    z-index: 2
+    &:hover, &:focus, &:active
+      background-color: $brown
+  &--closed .main-nav__toggle::before
+    content: ""
+    position: absolute
+    top: 15px
+    left: 17px
+    width: 36px
+    height: 2px
+    background-color: $white
+    box-shadow: 0 8px 0 0 $white, 0 16px 0 0 $white
+  &--closed .main-nav__toggle:active::before
+    background-color: rgba($white, 0.3)
+    box-shadow: 0 8px 0 0 rgba($white, 0.3), 0 16px 0 0 rgba($white, 0.3)
+  &--opened .main-nav__toggle
+    top: 0
+    right: auto
+    left: 0
+    &::before, &::after
+      content: ""
+      position: absolute
+      top: 24px
+      left: 18px
+      width: 36px
+      height: 2px
+      background-color: $white
+    &::before
+      transform: rotate(45deg)
+      box-shadow: none
+    &::after
+      transform: rotate(-45deg)
+    &:active::before, &:active::after
+      background-color: rgba($white, 0.3);
+
+.main-nav__list a
+  display: block
+  padding: 12px 21px
+  padding-bottom: 13px
+  font-size: 18px
+  line-height: 24px
+  color: #ffffff
+  text-transform: uppercase
+  text-decoration: none
+  background-color: $brown
+  border-top: 1px solid $light-brown
+  border-bottom: 1px solid $light-brown
+
+.main-nav__list a[href]
+  &:hover
+    background-color: $light-brown
+    border-top-color: $light-brown
+  &:active
+    color: rgba(255, 255, 255, 0.3)
+    background-color: $light-brown
+    border-top-color: $light-brown
+    
+@media (max-width: $mobile-width-only)
+  .main-nav--closed .main-nav__item
+    display: none
+    &--active
+      display: block
+      & a
+        padding-right: 70px
+        padding-left: 70px
+        text-align: center
+  .main-nav--opened .main-nav__wrapper
+    position: absolute
+    top: 0
+    right: 0
+    left: 70px
+    z-index: 10
+    min-height: 80vh
+    background-color: $brown
+  .main-nav--opened .main-nav__wrapper::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    width: 7px
+    height: 100%
+    box-shadow: inset 4px 0 7px -2px rgba(0, 0, 0, 0.4)
+    
+  .main-nav--nojs
+    & .main-nav__toggle
+      display: none
+    & .main-nav__wrapper
+      position: static
+      min-height: 0
+    & .main-nav__item
+      display: block
+      &--active a
+        padding-right: 21px
+        padding-left: 21px
+        text-align: left
+      
+@media (min-width: $tablet-width)
+  .main-info
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
+    padding-top: 15px
+    &__logo-block
+      flex-basis: 100%
+      flex-direction: row
+      justify-content: center
+      margin-bottom: 20px
+    &__logo-link
+      padding-top: 0
+      padding: 5px 15px 5px 0
+      font-size: 28px
+      font-weight: bold
+      color: $grafit
+      text-decoration: none
+      text-transform: uppercase
+      border-top: none
+      border-right: 4px solid $brown
+    &__logo-description
+      width: 20%
+      padding-left: 15px
+      font-size: 14px
+      line-height: 14px
+    &__address-block
+      margin-bottom: 0
+    &__working-hours
+      font-size: 14px
+    &__telephone-block
+      margin-bottom: 0
+  .main-nav
+    min-height: auto
+    background-color: $brown
+    box-shadow: 0px 0px 15px 0px rgba(97, 97, 97, 0.3)
+    &__toggle
+      display: none
+    &__list
+      display: flex
+      flex-wrap: nowrap
+      margin: 0
+      padding: 0 10px
+      list-style: none
+      & a
+        height: 100%
+        box-sizing: border-box
+        padding: 15px 10px
+        border: none
+    &__item
+      flex-basis: auto
+      flex-grow: 1
+      text-align: center
+      &--active a
+        color: $brown
+        background-color: $white
+    &__link
+      display: block
+      padding: 10px
+      font-weight: bold
+      color: #ffffff
+      text-transform: uppercase
+      text-decoration: none
+      &:hover
+        background-color: $light-brown
+      &--active
+        background-color: $white
+        color: $grafit
+        &:hover
+          background-color: $white
+  
+@media (min-width: $desktop-width)
+  .main-info
+    flex-wrap: nowrap
+    justify-content: space-between
+    align-items: center
+    width: 1024px
+    margin: 0 auto
+    &__logo-block
+      flex-basis: 500px
+      margin-bottom: 0
+    &__logo-description
+      width: 185px
+    &__address
+      font-size: 16px
+    &__working-hours
+      font-size: 12px
+  .main-nav
+    width: 1024px
+    margin: 0 auto

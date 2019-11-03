@@ -1,0 +1,73 @@
+.advantages
+  &__wrapper
+    padding-top: 30px
+    padding: 20px
+  &__title
+    display: block
+    font-size: 40px
+    line-height: 60px
+    text-transform: uppercase
+    text-align: center
+  &-block
+    &__list
+      margin: 0
+      padding: 0
+      padding-left: 40px
+      font-size: 21px
+      list-style: none
+      & li
+        position: relative
+        margin-bottom: 10px
+        &:last-child
+          margin-bottom: 0
+        &::before
+          content: ""
+          position: absolute
+          width: 20px
+          height: 20px
+          left: -40px
+          top: 0
+          border: 4px solid $brown
+          border-radius: 4px
+        &::after
+          content: ""
+          position: absolute
+          width: 13px
+          height: 5px
+          left: -34px
+          top: 7px
+          border-left: 4px solid $brown
+          border-bottom: 4px solid $brown
+          border-radius: 4px
+          transform: rotate(-45deg)
+
+.clients-block
+  & p
+    margin: 0
+    font-size: 21px
+
+@media (min-width: $tablet-width)
+  .advantages
+    &__wrapper
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+    &__title
+      flex-basis: 100%
+  .advantages-block
+    flex-basis: 50%
+    padding-right: 30px
+    box-sizing: border-box
+  .clients-block
+    flex-basis: 50%
+
+@media (min-width: $desktop-width)
+  .advantages
+    &__wrapper
+      width: 1024px
+      margin: 0 auto
+  .clients-block
+    flex-basis: 50%
+    padding-left: 30px
+    border-left: 1px solid $brown
+    box-sizing: border-box

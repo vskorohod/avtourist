@@ -1,0 +1,81 @@
+.page-footer
+  background-color: $grey
+  &__wrapper
+    display: flex
+    flex-direction: column
+    padding: 15px
+  &__footer-nav
+    order: 2
+  &__services-nav
+    order: 1
+
+.footer-nav
+  &__list
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    margin: 0
+    margin-top: 20px
+    margin-bottom: 20px
+    padding: 0
+    list-style: none
+    & li:not(:last-child)
+      margin-right: 10px
+    & a
+      font-size: 14px
+      line-height: 20px
+      color: $grafit
+      &:hover, &:active, &:focus
+        color: $brown
+        text-decoration: none
+        outline: 0
+  & p
+    margin: 0
+    font-size: 14px
+    color: $grafit
+    & a
+      color: $grafit
+      text-decoration: none
+      &:hover, &:active, &:focus
+        color: $brown
+        outline: 0
+
+.services-nav
+  &__list
+    margin: 0
+    padding: 0
+    padding-left: 20px
+    list-style: none
+    border-left: 4px solid $brown
+  & a
+    font-size: 14px
+    line-height: 20px
+    color: $grafit
+    &:hover, &:active, &:focus
+        color: $brown
+        text-decoration: none
+        outline: 0
+
+@media (min-width: $tablet-width)
+  .page-footer
+    &__wrapper
+      flex-direction: row
+      padding: 15px 50px
+    &__footer-nav
+      order: 1
+      margin-right: auto
+    &__services-nav
+      order: 2
+.footer-nav
+  &__list
+    display: block
+    margin-top: 75px
+    margin-bottom: 0
+    & li:not(:last-child)
+      margin-right: 0
+
+@media (min-width: $desktop-width)
+  .page-footer
+    &__wrapper
+      width: 1024px
+      margin: 0 auto
