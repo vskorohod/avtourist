@@ -120,7 +120,7 @@ h3 {
 .slider__list {
   position: relative;
   width: 100%;
-  min-height: 450px;
+  min-height: 300px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -229,13 +229,13 @@ h3 {
 
 @media (min-width: 768px) {
   .slider__list {
-    min-height: 350px;
+    min-height: 250px;
   }
 }
 
 @media (min-width: 1200px) {
   .slider__list {
-    min-height: 300px;
+    min-height: 200px;
   }
 }
 
@@ -712,6 +712,7 @@ h3 {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    padding-top: 50px;
   }
   .about__description {
     -webkit-box-flex: 1;
