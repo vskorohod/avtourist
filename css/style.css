@@ -551,24 +551,33 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .about__photo {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   text-align: center;
+  overflow: hidden;
 }
 
 .about__photo img {
+  max-width: none;
   height: 100%;
 }
 
 .about__name-block {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   padding: 20px 30px;
   background-color: #f5f5f5;
 }
@@ -586,6 +595,8 @@ h3 {
 }
 
 .about__description {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   padding: 20px 30px;
   background-color: #81716b;
   color: #ffffff;
@@ -601,15 +612,9 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  .about__wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
   .about__name-block {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
@@ -624,34 +629,32 @@ h3 {
 @media (min-width: 1200px) {
   .about__wrapper {
     display: block;
-    position: relative;
     width: 1024px;
-    min-height: 400px;
+    height: 400px;
     margin: 0 auto;
   }
   .about__photo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 512px;
+    display: inline-block;
+    width: 50%;
     height: 400px;
+    float: left;
+    overflow: hidden;
+  }
+  .about__photo img {
+    width: 100%;
   }
   .about__name-block {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 512px;
-    height: 200px;
-    padding-top: 50px;
+    display: inline-block;
+    width: 50%;
+    height: 50%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
   .about__description {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 512px;
-    height: 200px;
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
@@ -1048,6 +1051,108 @@ h3 {
   .reviews__wrapper {
     width: 1024px;
     margin: 0 auto;
+  }
+}
+
+.contacts h2 {
+  margin-left: 20px;
+}
+
+.contacts__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contacts__maps {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  height: 200px;
+}
+
+.contacts__block {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.contacts__block-item {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+}
+
+.contacts__block-item b {
+  font-size: 20px;
+  color: #81716b;
+  text-transform: uppercase;
+}
+
+.contacts__block-item span {
+  display: block;
+  font-size: 14px;
+}
+
+.contacts__block-item span a {
+  color: #464d53;
+  text-decoration: none;
+}
+
+.contacts__block-item span a:hover {
+  color: #81716b;
+}
+
+@media (min-width: 768px) {
+  .contacts__maps {
+    height: 300px;
+  }
+  .contacts__block-item {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts__wrapper {
+    position: relative;
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .contacts__wrapper h2 {
+    margin-left: 0;
+  }
+  .contacts__maps {
+    width: 100%;
+    height: 470px;
+  }
+  .contacts__block {
+    position: absolute;
+    width: 300px;
+    min-height: 350px;
+    background-color: #fff;
+    top: 120px;
+    right: 40px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(97, 97, 97, 0.3);
+            box-shadow: 0px 0px 15px 0px rgba(97, 97, 97, 0.3);
+  }
+  .contacts__block-item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }
 

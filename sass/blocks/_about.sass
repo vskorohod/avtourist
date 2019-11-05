@@ -1,13 +1,18 @@
 .about
   &__wrapper
     display: flex
-    flex-direction: column
+    flex-direction: row
+    flex-wrap: wrap
     justify-content: center
   &__photo
+    flex-grow: 0
     text-align: center
+    overflow: hidden
     & img
+      max-width: none
       height: 100%
   &__name-block
+    flex-basis: 100%
     padding: 20px 30px
     background-color: $grey
   &__name
@@ -19,6 +24,7 @@
   &__place
     margin: 0
   &__description
+    flex-basis: 100%
     padding: 20px 30px
     background-color: $brown
     color: #ffffff
@@ -30,10 +36,8 @@
 
 @media (min-width: $tablet-width)
   .about
-    &__wrapper
-      flex-direction: row
-      flex-wrap: wrap
     &__name-block
+      flex-basis: 50%
       flex-grow: 1
     &__description
       flex-grow: 1
@@ -42,28 +46,25 @@
   .about
     &__wrapper
       display: block
-      position: relative
       width: 1024px
-      min-height: 400px
+      height: 400px
       margin: 0 auto
     &__photo
-      position: absolute
-      top: 0
-      left: 0
-      width: 512px
+      display: inline-block
+      width: 50%
       height: 400px
+      float: left
+      overflow: hidden
+      img
+        width: 100%
     &__name-block
-      position: absolute
-      top: 0
-      right: 0
-      width: 512px
-      height: 200px
-      padding-top: 50px
+      display: inline-block
+      width: 50%
+      height: 50%
       box-sizing: border-box
     &__description
-      position: absolute
-      bottom: 0
-      right: 0
-      width: 512px
-      height: 200px
+      display: inline-block
+      width: 50%
+      height: 50%
+      overflow: hidden
       box-sizing: border-box
