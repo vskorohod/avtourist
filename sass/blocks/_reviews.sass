@@ -1,0 +1,61 @@
+.reviews
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    padding: 20px
+  &__list
+    margin: 0
+    margin-top: 60px
+    margin-bottom: 20px
+    padding: 0
+    list-style: none
+    li
+      padding: 20px
+      box-shadow: 0px 0px 15px 0px rgba(97, 97, 97, 0.3)
+      border: 3px solid $grey
+      border-radius: 10px
+      .reviews__title
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        span
+          font-weight: bold
+          text-transform: uppercase
+        time
+          font-weight: bold
+          font-size: 14px
+          text-align: right
+      p
+        font-size: 14px
+  &__image
+    margin-right: auto
+    margin-left: auto
+    margin-top: -70px
+    width: 100px
+    height: 100px
+    overflow: hidden
+    border: 3px solid $grey
+    border-radius: 50%
+    img
+      max-width: none
+      height: 100%
+  &__toggles
+    flex-basis: 100%
+    text-align: center
+
+@media (min-width: $tablet-width)
+  .reviews
+    &__list
+      margin-right: 100px
+      margin-left: 100px
+
+@media (min-width: $desktop-width)
+  .reviews
+    &__wrapper
+      width: 1024px
+      margin: 0 auto
+
+          
+        

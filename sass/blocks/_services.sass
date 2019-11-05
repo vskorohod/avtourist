@@ -1,0 +1,62 @@
+.services
+  &__wrapper
+    padding: 20px
+    overflow: hidden;
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      width: 140px
+      height: 150px
+      text-align: center
+      overflow: hidden
+      border: 1px solid $grey
+      box-sizing: border-box
+    a
+      display: block
+      position: relative
+      padding: 5px
+      padding-top: 60px
+      height: 148px
+      font-size: 14px
+      line-height: 18px
+      color: $grafit
+      box-sizing: border-box
+      &:hover
+        color: $brown
+        text-decoration: none
+        border-bottom: 5px solid $brown
+      img
+        position: absolute
+        width: 30px
+        height: 30px
+        top: 20px
+        left: 50%
+        transform: translateX(-50%)
+
+@media (min-width: $tablet-width)
+  .services
+    &__list
+      li
+        width: 256px
+        height: 150px
+      a
+        padding-top: 70px
+        font-size: 18px
+        img
+          width: 40px
+          height: 40px
+
+@media (min-width: $desktop-width)
+  .services
+    &__wrapper
+      width: 1024px
+      margin: 0 auto
+    &__list
+      li
+        width: 256px
+        height: 150px

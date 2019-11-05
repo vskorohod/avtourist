@@ -1,0 +1,71 @@
+.news
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    padding: 20px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    flex-basis: 100%
+    margin: 0
+    margin-top: 20px
+    padding: 0
+    list-style: none
+    li
+      position: relative
+      width: 320px
+      margin-bottom: 20px
+      padding-bottom: 20px
+      border: 1px solid $grey
+      box-sizing: border-box
+      &:hover
+        box-shadow: 0px 0px 15px 0px rgba(97, 97, 97, 0.3)
+        &::after
+          content: ""
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 5px
+          background-color: $brown
+      a
+        display: inline-block
+        margin: 20px
+        font-size: 16px
+        color: $grafit
+        &:hover
+            text-decoration: none
+      span
+        a
+          margin: 0 20px
+          font-size: 12px
+          line-height: 12px
+          color: $brown
+          &:hover
+            text-decoration: none
+  &__item-image
+    max-height: 175px
+    overflow: hidden
+    img
+      width: 100%
+          
+@media (min-width: $tablet-width)
+  .news
+    &__list
+      flex-direction: row
+      justify-content: space-between
+      li
+        flex-basis: 30%
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+          
+
+@media (min-width: $desktop-width)
+  .news
+    &__wrapper
+      width: 1024px
+      margin: 0 auto

@@ -47,6 +47,10 @@ img
 	clip: rect (0 0 0 0)
 	overflow: hidden
 
+h1
+  font-size: 40px
+  line-height: 60px
+  text-transform: uppercase
 h2
   display: inline-block
   padding-bottom: 10px
@@ -62,3 +66,54 @@ h3
   color: $brown
   text-transform: uppercase
     
+.button
+  position: relative
+  display: inline-block
+  padding: 5px 15px
+  padding-left: 30px
+  font-size: 14px
+  color: $grafit
+  text-transform: uppercase
+  text-decoration: none
+  border: 1px solid $grafit
+  &:hover, &:focus
+    color: $brown
+    border-color: $brown
+    &::before
+      background-image: url('../img/left-doppelt.svg')
+  &::before
+    content: ""
+    position: absolute
+    left: 10px
+    top: 50%
+    transform: translateY(-50%)
+    width: 15px
+    height: 15px
+    background-image: url('../img/left.svg')
+    background-repeat: no-repeat
+    background-position: center
+
+
+.slider
+  &__toggle
+    width: 16px
+    height: 18px
+    border-radius: 50%
+    border: 2px solid $dark-grey
+    cursor: pointer
+    &:hover, &:active, &:focus
+      background: radial-gradient(circle closest-side, $dark-grey 4px, $white 5px)
+      outline: none
+    &:active
+      background: $brown
+      outline: none
+    &--active
+      border-color: $brown
+      background: radial-gradient(circle closest-side, $brown 4px, $white 5px)
+      &:hover, &:active, &:focus
+        outline: auto
+        background: radial-gradient(circle closest-side, $light-brown 4px, $white 5px)
+      &:active
+        background: $dark-grey
+        outline: none
+      
