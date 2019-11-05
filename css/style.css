@@ -140,6 +140,10 @@ h3 {
   z-index: 2;
 }
 
+.slider__item--nojs {
+  display: block;
+}
+
 .slider__item p {
   font-size: 14px;
 }

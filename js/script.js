@@ -37,7 +37,11 @@ function Sim(sldrId) {
   // Ищем стрелку вправо
   this.rightArrow = this.sldrRoot.querySelector('.slider__arrow-right');
   // Ищем toggles
-	this.indicatorDots = this.sldrRoot.querySelector('.slider__toggles');
+  this.indicatorDots = this.sldrRoot.querySelector('.slider__toggles');
+  
+  if (this.sldrElemFirst.classList.contains('slider__item--nojs')) {
+    this.sldrElemFirst.classList.remove ('slider__item--nojsg');
+  }
 
 	// Инициализируем настройки слайдера
 	this.options = Sim.defaults;
