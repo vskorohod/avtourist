@@ -96,8 +96,6 @@ h3
 
 .slider
   position: relative
-  // max-width: 1024px
-  // min-width: 320px
   margin: 0 auto
   &__list
     position: relative
@@ -146,8 +144,9 @@ h3
     text-align: center
     z-index: 3
   &__toggle
+    +button-reset()
     width: 16px
-    height: 18px
+    height: 16px
     margin-right: 15px
     border-radius: 50%
     border: 2px solid $dark-grey

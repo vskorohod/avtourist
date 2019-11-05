@@ -189,8 +189,13 @@ h3 {
 }
 
 .slider__toggle {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
   width: 16px;
-  height: 18px;
+  height: 16px;
   margin-right: 15px;
   border-radius: 50%;
   border: 2px solid #bdbdbd;
