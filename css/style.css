@@ -120,7 +120,7 @@ h3 {
 .slider__list {
   position: relative;
   width: 100%;
-  min-height: 300px;
+  min-height: 450px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -144,7 +144,7 @@ h3 {
   font-size: 14px;
 }
 
-.slider__title {
+.slider__item-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,12 +155,12 @@ h3 {
           justify-content: space-between;
 }
 
-.slider__title span {
+.slider__item-title span {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.slider__title time {
+.slider__item-title time {
   font-weight: bold;
   font-size: 14px;
   text-align: right;
@@ -225,6 +225,18 @@ h3 {
 .slider__toggle--active:active {
   background: #bdbdbd;
   outline: none;
+}
+
+@media (min-width: 768px) {
+  .slider__list {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .slider__list {
+    min-height: 300px;
+  }
 }
 
 .page-header {

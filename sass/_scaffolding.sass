@@ -100,7 +100,7 @@ h3
   &__list
     position: relative
     width: 100%
-    min-height: 300px
+    min-height: 450px
     margin: 0
     padding: 0
     list-style: none
@@ -116,17 +116,17 @@ h3
     z-index: 2
     p
       font-size: 14px
-  &__title
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-between
-    span
-      font-weight: bold
-      text-transform: uppercase
-    time
-      font-weight: bold
-      font-size: 14px
-      text-align: right
+    &-title
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      span
+        font-weight: bold
+        text-transform: uppercase
+      time
+        font-weight: bold
+        font-size: 14px
+        text-align: right
   &__item-image
     margin-right: auto
     margin-left: auto
@@ -166,4 +166,14 @@ h3
       &:active
         background: $dark-grey
         outline: none
+
+@media (min-width: $tablet-width)
+  .slider
+    &__list
+      min-height: 350px
+
+@media (min-width: $desktop-width)
+  .slider
+    &__list
+      min-height: 300px
       
